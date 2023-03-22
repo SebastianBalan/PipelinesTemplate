@@ -33,13 +33,22 @@ pipeline {
              steps {
                  echo 'UiPathTest'
                  UiPathTest(
-                     credentials: Token(accountName: 'aitraining', credentialsId: 'userkeyOrch'),
+                     credentials: ExternalApp(
+                            accountForApp: 'aitraining', 
+                            applicationId: 'c4397bae-7ce2-48a8-97a0-78fef13c2bb0', 
+                            applicationScope: 'OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read', 
+                            applicationSecret: '(~zBGKTWajDe4j3z', 
+                            identityUrl: 'https://cloud.uipath.com/'
+                            ), 
                      folderName: 'sebi',
-                     orchestratorAddress: 'https://cloud.uipath.com/aitraining',
+                     orchestratorAddress: 'https://cloud.uipath.com/',
                      orchestratorTenant: 'UiPathDefault',
                      parametersFilePath: '',
                      testResultsOutputPath: 'TEST_OUTPUT_PATH',
-                     testTarget: TestProject(environments: '', testProjectPath: TEST_PROJECT_PATH),
+                     testTarget: TestProject(
+                            environments: '',
+                            testProjectPath: TEST_PROJECT_PATH
+                            ),
                      timeout: 500,
                      traceLevel: 'Verbose'
                  )
@@ -76,11 +85,17 @@ pipeline {
                  echo 'UiPathDeploy'
                  UiPathDeploy (
                     createProcess: true,
-                    credentials: Token(accountName: 'aitraining', credentialsId: 'userkeyOrch'),
+                    credentials: ExternalApp(
+                            accountForApp: 'aitraining', 
+                            applicationId: 'c4397bae-7ce2-48a8-97a0-78fef13c2bb0', 
+                            applicationScope: 'OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read', 
+                            applicationSecret: '(~zBGKTWajDe4j3z', 
+                            identityUrl: 'https://cloud.uipath.com/'
+                            ), 
                     entryPointPaths: 'Main.xaml',
                     environments: '',
                     folderName: 'sebi',
-                    orchestratorAddress: 'https://cloud.uipath.com/aitraining',
+                    orchestratorAddress: 'https://cloud.uipath.com/',
                     orchestratorTenant: 'UiPathDefault',
                     packagePath: PROCESS_OUTPUT_PATH,
                     traceLevel: 'Verbose'
@@ -95,10 +110,16 @@ pipeline {
                  echo 'UiPathDeployAssets'
                  UiPathAssets (
                      assetsAction: DeployAssets(),
-                     credentials: Token(accountName: 'aitraining', credentialsId: 'userkeyOrch'),
+                     credentials: ExternalApp(
+                            accountForApp: 'aitraining', 
+                            applicationId: 'c4397bae-7ce2-48a8-97a0-78fef13c2bb0', 
+                            applicationScope: 'OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read', 
+                            applicationSecret: '(~zBGKTWajDe4j3z', 
+                            identityUrl: 'https://cloud.uipath.com/'
+                            ), 
                      filePath: ASSETS_FILE_PATH,
                      folderName: 'sebi',
-                     orchestratorAddress: 'https://cloud.uipath.com/aitraining',
+                     orchestratorAddress: 'https://cloud.uipath.com/',
                      orchestratorTenant: 'UiPathDefault',
                      traceLevel: 'None'
                 )

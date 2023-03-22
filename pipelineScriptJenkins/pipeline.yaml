@@ -23,7 +23,7 @@ pipeline {
                  // Get some code from a GitHub repository
                  git branch: 'main',
                  credentialsId: '8256c430-4681-428d-9199-359ec61b5327',
-                 url: 'https://github.com/SebastianBalan/JenkinsPipelineV2'
+                 url: 'https://github.com/SebastianBalan/PipelinesTemplate'
              }
          }
          stage('Test code') {

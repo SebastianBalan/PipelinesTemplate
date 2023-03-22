@@ -37,7 +37,7 @@ pipeline {
                             accountForApp: 'aitraining', 
                             applicationId: 'c4397bae-7ce2-48a8-97a0-78fef13c2bb0', 
                             applicationScope: 'OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read', 
-                            applicationSecret: '(~zBGKTWajDe4j3z', 
+                            applicationSecret: 'hQCwa7#smLO^vn9z', 
                             identityUrl: 'https://cloud.uipath.com/'
                             ), 
                      folderName: 'sebi',
@@ -89,7 +89,7 @@ pipeline {
                             accountForApp: 'aitraining', 
                             applicationId: 'c4397bae-7ce2-48a8-97a0-78fef13c2bb0', 
                             applicationScope: 'OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read', 
-                            applicationSecret: '(~zBGKTWajDe4j3z', 
+                            applicationSecret: 'hQCwa7#smLO^vn9z', 
                             identityUrl: 'https://cloud.uipath.com/'
                             ), 
                     entryPointPaths: 'Main.xaml',
@@ -114,7 +114,7 @@ pipeline {
                             accountForApp: 'aitraining', 
                             applicationId: 'c4397bae-7ce2-48a8-97a0-78fef13c2bb0', 
                             applicationScope: 'OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read', 
-                            applicationSecret: '(~zBGKTWajDe4j3z', 
+                            applicationSecret: 'hQCwa7#smLO^vn9z', 
                             identityUrl: 'https://cloud.uipath.com/'
                             ), 
                      filePath: ASSETS_FILE_PATH,

@@ -1,0 +1,3 @@
+name,type,value,description
+Email,Text,test.email@uipath.com,
+Test,Integer,10,

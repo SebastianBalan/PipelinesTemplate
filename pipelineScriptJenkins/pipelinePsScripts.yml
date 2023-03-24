@@ -1,3 +1,6 @@
+// template command for running tests via cli under 'tools' folder
+// uipcli.exe test run https://cloud.uipath.com/ UiPathDefault -A aitraining -I c4397bae-7ce2-48a8-97a0-78fef13c2bb0 -S "hQCwa7#smLO^vn9z" --applicationScope "OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read" -P "C:\sebi\UiPath\PipelinesTemplate\project.json" --organizationUnit sebi
+
 pipeline {
      agent any
      environment {

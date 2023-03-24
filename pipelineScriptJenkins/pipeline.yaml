@@ -26,6 +26,16 @@ pipeline {
                  url: 'https://github.com/SebastianBalan/PipelinesTemplate'
              }
          }
+         stage('Install the latest CLI') {
+             steps {
+                 UiPathInstallPlatform(
+                    cliNupkgPath: '${WORKSPACE}\\nupkg\\UiPath.CLI.Windows.22.10.8438.32859.nupkg',
+                    cliVersion: 'WIN_22.10.8438.32859',
+                    forceInstall: true,
+                    traceLevel: 'None'
+                )
+             }
+         }
          stage('Test code') {
             when {
                 equals expected : 'True', actual: RunTests

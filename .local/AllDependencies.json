@@ -8784,14 +8784,14 @@
     ]
   },
   "packageFolders": {
-    "C:\\UiPathPackages": {}
+    "C:\\Users\\sebastian.balan\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "PipelinesTemplate",
       "projectName": "PipelinesTemplate",
       "projectPath": "C:\\sebi\\UiPath\\PipelinesTemplate\\.local",
-      "packagesPath": "C:\\UiPathPackages",
+      "packagesPath": "C:\\Users\\sebastian.balan\\.nuget\\packages\\",
       "outputPath": "C:\\sebi\\UiPath\\PipelinesTemplate\\.local"
     },
     "frameworks": {
@@ -8808,7 +8808,7 @@
             "version": "[22.10.3, 22.10.3]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\sebastian.balan\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\sebi\\CLI\\tools\\runtime.json"
       }
     },
     "runtimes": {
@@ -8816,5 +8816,42 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "The local source 'C:\\Users\\sebastian.balan\\OneDrive - UiPath\\Documents\\UiPath\\Publicity' doesn't exist.",
+      "libraryId": "UiPath.System.Activities"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "The local source 'C:\\Users\\sebastian.balan\\OneDrive - UiPath\\Documents\\UiPath\\Publicity' doesn't exist.",
+      "libraryId": "UiPath.Testing.Activities"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "The local source 'C:\\Users\\sebastian.balan\\OneDrive - UiPath\\Documents\\UiPath\\Publicity' doesn't exist.",
+      "libraryId": "UiPath.Testing.Activities"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "The local source 'C:\\Users\\sebastian.balan\\OneDrive - UiPath\\Documents\\UiPath\\Publicity' doesn't exist.",
+      "libraryId": "UiPath.System.Activities"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Unable to load the service index for source https://cloud.uipath.com/aitraining/UiPathDefault/orchestrator_/nuget/v3/eb18f4b2-e843-42c9-a7b2-68514fa4f755/index.json.",
+      "libraryId": "UiPath.System.Activities"
+    }
+  ]
 }

@@ -1,0 +1,41 @@
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
+
+stages:  # List of stages for jobs, and their order of execution
+  - test        
+  - build
+  - deploy
+
+UiPath_Test:   # This job runs in the test stage.
+  stage: test    
+  tags:
+  - Agent_Windows
+  script:
+    - echo "Running tests" 
+    - powershell -File ./UiPathRunTests.ps1 "https://cloud.uipath.com/aitraining" UiPathDefault -UserKey 2bpZubtS0CTois48kCKdfr7CTRq_5omtbpaQG43v4rcmU -account_name aitraining -project_path "$CI_PROJECT_DIR\project.json" -folder_organization_unit sebi -result_path "$CI_PROJECT_DIR\test-reports"
+    - if ($LASTEXITCODE) {
+        exit 1;
+      }
+
+UiPath_Build:  # This job runs in the build stage.
+  stage: build # It only starts when the job in the test stage completes successfully.
+  tags:
+  - Agent_Windows
+  script:
+    - echo "Compiling the code..."
+    - ./UiPathPack.ps1 "$CI_PROJECT_DIR\project.json" -destination_folder "$CI_PROJECT_DIR\ProcessOutputPacked" -autoversion
+    - echo "Nugget package created."
+  artifacts:
+    paths:
+      - ProcessOutputPacked/*.nupkg
+
+UiPath_Deploy:      # This job runs in the deploy stage.
+  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+  environment: production
+  tags:
+  - Agent_Windows
+  dependencies: 
+    - UiPath_Build
+  script:
+    - echo "Deploying process..."
+    - ./UiPathDeploy.ps1 "$CI_PROJECT_DIR\ProcessOutputPacked" "https://cloud.uipath.com/aitraining" UiPathDefault -UserKey 2bpZubtS0CTois48kCKdfr7CTRq_5omtbpaQG43v4rcmU -account_name aitraining -folder_organization_unit sebi
+    - echo "Process successfully deployed."
